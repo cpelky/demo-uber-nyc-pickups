@@ -45,7 +45,7 @@ maps = {
 }
 
 # Layout the top section of the app
-col1, col2 = st.beta_columns(2)
+col1, col2 = st.columns(2)
 col1.write(__doc__)
 col2.subheader("")
 hour_selected = col2.slider("Select hour of pickup", 0, 23)
@@ -56,7 +56,7 @@ st.write("---")
 # Display the maps
 data = load_data(50000)
 data = data[data.hour == hour_selected]
-for name, col in zip(names, st.beta_columns(len(names))):
+for name, col in zip(names, st.columns(len(names))):
     lat, lon, zoom = maps[name]
     with col:
         st.write(f"**{name}**", map(data, lat, lon, zoom))
