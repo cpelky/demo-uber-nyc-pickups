@@ -49,8 +49,8 @@ col1, col2 = st.columns(2)
 col1.write(__doc__)
 col2.subheader("")
 hour_selected = col2.slider("Select hour of pickup", 0, 23)
-# names = ["New York City"] + [col2.selectbox("Location", list(maps)[1:])]
-names = ["New York City"] + col2.multiselect("Location", list(maps)[1:])
+names = ["New York City"] + [col2.selectbox("Location", list(maps)[1:])]
+# names = ["New York City"] + col2.multiselect("Location", list(maps)[1:])
 st.write("---")
 
 # Display the maps
